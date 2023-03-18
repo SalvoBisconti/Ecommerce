@@ -1,0 +1,44 @@
+.Header {
+  width: 100vw;
+  height: 65px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  position: fixed;
+  z-index: 2;
+  background-color: rgb(1, 132, 117);
+}
+
+.logo-sec {
+  width: 60%;
+}
+.header-logo {
+  width: 150px;
+}
+
+.header-list {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+}
+.cart-element-header {
+  position: relative;
+}
+.header-cart-icon {
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.cart-elements-number {
+  position: absolute;
+  top: -12px;
+  right: -20px;
+  color: white;
+  border-radius: 100%;
+  background-color: black;
+  padding: 3px 7px;
+  font-size: 0.8rem;
+  text-align: center;
+}

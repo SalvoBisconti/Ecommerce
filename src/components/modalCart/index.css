@@ -1,0 +1,43 @@
+.ModalCart {
+  position: fixed;
+  top: 50px;
+  right: -300px;
+  width: 50vw;
+  background-color: white;
+  z-index: 5;
+  transition: all 0.35s ease;
+  padding: 10px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  /* height: 100%;
+  overflow: scroll; */
+}
+
+.modal-cart-show {
+  right: 0;
+}
+.cart-title {
+  text-align: center;
+  color: rgb(1, 132, 117);
+}
+.items-cart-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 6px;
+  background-color: whitesmoke;
+  padding: 5px;
+  height: 100%;
+  overflow: scroll;
+}
+.empty-cart-text {
+  padding: 20px 0;
+}
+
+@media screen and (min-width: 800px) {
+  .ModalCart {
+    width: 25vw;
+  }
+}

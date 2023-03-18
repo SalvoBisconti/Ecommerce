@@ -1,0 +1,17 @@
+.MiniCardList {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  background-color: whitesmoke;
+  box-shadow: 0 0 1px grey;
+}
+
+.miniCardList-product {
+  width: 70vw;
+  display: flex;
+  justify-content: space-around;
+  gap: 15px;
+  overflow-x: scroll;
+}

@@ -1,0 +1,48 @@
+.Slider {
+  border: 1px solid grey;
+  height: 100%;
+  position: relative;
+  border-radius: 8px;
+}
+
+.img-slider {
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.left-slider {
+  font-size: 1.5rem;
+  color: white;
+  position: absolute;
+  left: 0;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+  width: 10%;
+}
+
+.right-slider {
+  font-size: 1.5rem;
+  color: white;
+  position: absolute;
+  right: 0;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+  width: 10%;
+}
+
+.right-slider:hover,
+.left-slider:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+/* @media screen and (max-width: 800px) {
+  .right-slider,
+  .left-slider {
+    width: 8%;
+  }
+} */

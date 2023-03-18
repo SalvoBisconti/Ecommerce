@@ -1,0 +1,64 @@
+.ModalCard {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-background {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  cursor: pointer;
+}
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  height: 60vh;
+  width: 80vw;
+  border-radius: 24px;
+  padding: 20px;
+  z-index: 4;
+  gap: 15px;
+}
+.images-section {
+  height: 70%;
+  width: 100%;
+}
+
+.buy-section {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.add-cart-btn {
+  cursor: pointer;
+  border: none;
+  background-color: rgb(1, 132, 117);
+  padding: 6px 12px;
+  border-radius: 8px;
+  color: white;
+}
+
+.add-cart-btn:hover {
+  background-color: rgb(2, 110, 97);
+}
+
+.price-section {
+  display: flex;
+  gap: 5px;
+}
+.sale-text {
+  padding: 5px 2px;
+  border-radius: 4px;
+  background-color: tomato;
+  font-size: 0.8rem;
+}

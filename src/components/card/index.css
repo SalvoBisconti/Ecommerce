@@ -1,0 +1,60 @@
+.Card {
+  height: 220px;
+  width: 150px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.35s;
+  scroll-snap-align: start;
+  background-color: whitesmoke;
+}
+.Card:hover {
+  box-shadow: 0 0 2px grey;
+}
+
+.card-img {
+  width: 140px;
+  height: 50%;
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
+}
+
+.card-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  z-index: 3;
+  justify-content: space-between;
+}
+.card-bio-area {
+  height: 60px;
+  width: 100%;
+  overflow: hidden;
+  flex-grow: 1;
+}
+.card-price-area {
+  display: flex;
+  width: 100%;
+  margin-top: 10px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.card-sale-icon {
+  margin-right: 5px;
+  color: white;
+  background-color: tomato;
+  border-radius: 4px;
+  padding: 2px;
+  font-size: 0.7rem;
+  animation: flip-item 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+}
+
+@keyframes flip-item {
+  from {
+    transform: rotateX(0);
+  }
+  to {
+    transform: rotateX(360deg);
+  }
+}

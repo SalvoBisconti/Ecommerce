@@ -1,0 +1,18 @@
+.CardList {
+  height: 350px;
+  padding: 20px;
+}
+.list-title {
+  padding: 10px 0;
+  color: rgb(1, 132, 117);
+  font-size: 1.7rem;
+}
+.card-list {
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  overflow-x: scroll;
+  gap: 20px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
