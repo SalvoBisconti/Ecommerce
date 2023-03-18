@@ -6,58 +6,38 @@ const ModalCard = ({
   setModalContent,
   setModalCartContent,
   cartStorageContent,
+  modalCartContent,
 }) => {
   const onHandleModal = () => {
     setModalContent({ isOpen: false });
   };
 
   const onHandleAddCart = () => {
-    //C!! trasformo undefined in true/false
-    setModalCartContent((prev) =>
-      !!prev.find((product) => product.id === modalContent.productData.id)
-        ? [...prev]
-        : [...prev, modalContent.productData]
-    );
-    const isProductInLocalStorage = cartStorageContent.find(
+    const isProductInLocal = cartStorageContent.find(
       (product) => product.id === modalContent.productData.id
     );
-    // cartStorageContent.map((item) => {
-    //   if (cartStorageContent.length) {
-    //     if (item.id === modalContent.productData.id) {
-    //       alert("n'avutru n vo?");
-    //     } else {
-    //       localStorage.setItem(
-    //         "cartStorage",
-    //         JSON.stringify([...cartStorageContent, modalContent.productData])
-    //       );
-    //     }
-    //   } else {
-    //     localStorage.setItem(
-    //       "cartStorage",
-    //       JSON.stringify([...cartStorageContent, modalContent.productData])
-    //     );
-    //   }
-    // });
-    if (isProductInLocalStorage) {
-      //FIXME:  da risolvere l'aumento della quantità
-      // cartStorageContent.map((item) => {
-      //   item.id === modalContent.productData.id;
-      //   setModalCartContent((prev) =>
-      //     item.id === modalContent.productData.id
-      //       ? [...prev]
-      //       : [...prev, modalContent.productData.quantity++]
-      //   );
-      // });
-      // console.log(cartStorageContent);
+    if (isProductInLocal) {
+      const updatedProductQty = {
+        ...modalContent.productData,
+        quantity: modalContent.productData.quantity++,
+      };
+      const filterCart = cartStorageContent.filter(
+        (product) => product.id !== isProductInLocal.id
+      );
 
-      alert(`${modalContent.productData.title} è già presente nel carrello!`);
+      const newCartfinish = [...filterCart, updatedProductQty];
+      console.log(newCartfinish);
+      setModalCartContent([newCartfinish]);
+
+      localStorage.setItem("cartStorage", JSON.stringify([...newCartfinish]));
+      alert("Added one more");
     } else {
+      setModalCartContent((prev) => [...prev, modalContent.productData]);
       localStorage.setItem(
         "cartStorage",
         JSON.stringify([...cartStorageContent, modalContent.productData])
       );
-
-      alert(`${modalContent.productData.title} aggiunto al carrello!`);
+      alert("Product added in cart");
     }
   };
 

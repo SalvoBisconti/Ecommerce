@@ -35,7 +35,11 @@
 .empty-cart-text {
   padding: 20px 0;
 }
-
+.cart-sum {
+  border-top: 1px solid rgba(128, 128, 128, 0.45);
+  text-align: end;
+  padding: 5px 20px;
+}
 @media screen and (min-width: 800px) {
   .ModalCart {
     width: 25vw;

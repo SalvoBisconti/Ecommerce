@@ -2,12 +2,7 @@ import "./index.css";
 import { useState } from "react";
 import { HiShoppingCart, HiOutlineShoppingCart } from "react-icons/hi";
 
-const Header = ({
-  setIsCartModal,
-  isCartModal,
-  cartStorageContent,
-  setModalCartContent,
-}) => {
+const Header = ({ setIsCartModal, isCartModal, cartStorageContent }) => {
   const onHandleCart = () => {
     setIsCartModal(!isCartModal);
   };

@@ -6,6 +6,11 @@ const ModalCart = ({
   cartStorageContent,
   setModalCartContent,
 }) => {
+  const cartSum = cartStorageContent.reduce(
+    (acc, product) => acc + product.price * product.quantity,
+    0
+  );
+
   return (
     <div className={`ModalCart ${isCartModal && "modal-cart-show "}`}>
       <div className="cart-content">
@@ -24,6 +29,7 @@ const ModalCart = ({
               />
             ))
           )}
+          <h4 className="cart-sum">Total: ${cartSum} </h4>
         </div>
       </div>
     </div>
