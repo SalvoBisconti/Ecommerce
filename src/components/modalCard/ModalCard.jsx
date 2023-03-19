@@ -26,7 +26,7 @@ const ModalCard = ({
       );
 
       const newCartfinish = [...filterCart, updatedProductQty];
-      console.log(newCartfinish);
+
       setModalCartContent([newCartfinish]);
 
       localStorage.setItem("cartStorage", JSON.stringify([...newCartfinish]));

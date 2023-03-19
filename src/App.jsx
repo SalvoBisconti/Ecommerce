@@ -1,15 +1,31 @@
 import CardList from "./components/cardList";
+import Filter from "./components/filterEl";
+import Footer from "./components/footer";
 import Header from "./components/header";
 import Hero from "./components/hero";
 import MiniCardList from "./components/miniCardList";
 import ModalCard from "./components/modalCard";
 import ModalCart from "./components/modalCart";
-import Footer from "./components/footer";
-import { useState } from "react";
+
+import { useState, useEffect } from "react";
+import { GET } from "../src/utils/http";
 
 import "./App.css";
 
 function App() {
+  const [productsData, setProductsData] = useState([]);
+  useEffect(() => {
+    GET("/products").then(({ products }) =>
+      setProductsData(
+        products.map((item) => {
+          item.quantity = 1;
+          return item;
+        })
+      )
+    );
+  }, []);
+
+  const [categoryFilter, setCategoryFilter] = useState();
   const [inputEl, setInputEl] = useState("");
   const [modalContent, setModalContent] = useState({
     productData: {},
@@ -20,7 +36,7 @@ function App() {
   const [modalCartContent, setModalCartContent] = useState([]);
   const cartStorageContent =
     JSON.parse(localStorage.getItem("cartStorage")) || [];
-  // console.log(cartStorageContent);
+
   return (
     <div className="App">
       <Header
@@ -30,10 +46,16 @@ function App() {
       />
       <Hero setInputEl={setInputEl} inputEl={inputEl} />
       <MiniCardList endpoint={"/products"} inputEl={inputEl} />
+      <Filter
+        productsData={productsData}
+        setCategoryFilter={setCategoryFilter}
+        categoryFilter={categoryFilter}
+      />
       <CardList
-        endpoint={"/products"}
+        productsData={productsData}
         title={"Products:"}
         setModalContent={setModalContent}
+        categoryFilter={categoryFilter}
       />
       {modalContent.isOpen && (
         <ModalCard
@@ -51,6 +73,7 @@ function App() {
           setModalCartContent={setModalCartContent}
         />
       )}
+      <Footer />
     </div>
   );
 }

@@ -3,7 +3,24 @@ import "./index.css";
 const Footer = () => {
   return (
     <div className="Footer">
-      <p></p>
+      <div className="top-footer">
+        <img
+          src="../../../public/logo.png"
+          alt="logo"
+          className="footer-logo"
+        />
+        <ul className="footer-list">
+          <li>About us</li>
+          <li>Concacts</li>
+          <li>Policy</li>
+          <li>Privacy</li>
+          <li></li>
+        </ul>
+      </div>
+
+      <div className="bottom-footer">
+        <p>Created by Salvo Bisconti. © All rights reserved</p>
+      </div>
     </div>
   );
 };

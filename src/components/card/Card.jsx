@@ -21,7 +21,7 @@ const Card = ({ productsData, setModalContent }) => {
         </div>
 
         <div className="card-price-area">
-          <h5 className="card-sale-icon">{`${productsData.discountPercentage}%`}</h5>
+          <h5 className="card-sale-icon">{`-${productsData.discountPercentage}%`}</h5>
           <h4>{`$ ${productsData.price}`}</h4>
         </div>
       </div>
