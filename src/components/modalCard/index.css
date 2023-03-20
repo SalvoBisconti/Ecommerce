@@ -62,3 +62,9 @@
   background-color: tomato;
   font-size: 0.8rem;
 }
+
+@media screen and (min-width: 800px) {
+  .modal-content {
+    width: 50vw;
+  }
+}

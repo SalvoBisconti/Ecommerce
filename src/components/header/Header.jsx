@@ -18,7 +18,7 @@ const Header = ({
     <div className="Header">
       <div className="logo-sec">
         <img
-          src="../../../public/logo.png"
+          src="../../../public/favicon.png"
           alt="logo"
           className="header-logo"
         />
