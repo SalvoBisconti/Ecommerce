@@ -4,7 +4,6 @@ import "./index.css";
 const CardList = ({ productsData, title, setModalContent, categoryFilter }) => {
   return (
     <div className="CardList">
-      {/* <h2 className="list-title"> {title}</h2> */}
       <div className="card-list">
         {!categoryFilter
           ? productsData.map((product) => (

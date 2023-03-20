@@ -1,10 +1,18 @@
 import "./index.css";
 import { useState } from "react";
-import { HiShoppingCart, HiOutlineShoppingCart } from "react-icons/hi";
+import { HiShoppingCart, HiOutlineShoppingCart, HiMenu } from "react-icons/hi";
 
-const Header = ({ setIsCartModal, isCartModal, cartStorageContent }) => {
+const Header = ({
+  setIsCartModal,
+  isCartModal,
+  cartStorageContent,
+  setIsHamburgerMenu,
+}) => {
   const onHandleCart = () => {
     setIsCartModal(!isCartModal);
+  };
+  const onHandleHamburgerMenu = () => {
+    setIsHamburgerMenu((prev) => !prev);
   };
   return (
     <div className="Header">
@@ -16,16 +24,28 @@ const Header = ({ setIsCartModal, isCartModal, cartStorageContent }) => {
         />
       </div>
       <ul className="header-list">
-        <li> </li>
-        <li> </li>
+        <li className="li-hidden">About us </li>
+        <li className="li-hidden">Shop </li>
+        <li className="li-hidden">Offers</li>
         <li>
           <div className="cart-element-header">
-            <HiOutlineShoppingCart
-              onClick={onHandleCart}
-              className="header-cart-icon"
-            />
+            {cartStorageContent.length > 0 ? (
+              <HiShoppingCart
+                onClick={onHandleCart}
+                className="header-cart-icon"
+              />
+            ) : (
+              <HiOutlineShoppingCart
+                onClick={onHandleCart}
+                className="header-cart-icon"
+              />
+            )}
             <p className="cart-elements-number">{cartStorageContent.length}</p>
           </div>
+        </li>
+        <li>
+          {" "}
+          <HiMenu className="hamburger-menu" onClick={onHandleHamburgerMenu} />
         </li>
       </ul>
     </div>

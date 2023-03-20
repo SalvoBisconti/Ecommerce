@@ -6,12 +6,17 @@ const ModalCard = ({
   setModalContent,
   setModalCartContent,
   cartStorageContent,
-  modalCartContent,
+  setIsPopup,
 }) => {
   const onHandleModal = () => {
     setModalContent({ isOpen: false });
   };
-
+  const showPopup = () => {
+    setIsPopup((prev) => !prev);
+    setTimeout(() => {
+      setIsPopup(false);
+    }, 2000);
+  };
   const onHandleAddCart = () => {
     const isProductInLocal = cartStorageContent.find(
       (product) => product.id === modalContent.productData.id
@@ -30,14 +35,15 @@ const ModalCard = ({
       setModalCartContent([newCartfinish]);
 
       localStorage.setItem("cartStorage", JSON.stringify([...newCartfinish]));
-      alert("Added one more");
+
+      showPopup();
     } else {
       setModalCartContent((prev) => [...prev, modalContent.productData]);
       localStorage.setItem(
         "cartStorage",
         JSON.stringify([...cartStorageContent, modalContent.productData])
       );
-      alert("Product added in cart");
+      showPopup();
     }
   };
 
@@ -55,7 +61,7 @@ const ModalCard = ({
 
         <div className="buy-section">
           <div className="price-section">
-            <h4 className="sale-text">{`${modalContent.productData.discountPercentage}%`}</h4>
+            <h4 className="sale-text">{`-${modalContent.productData.discountPercentage}%`}</h4>
             <h3> {`$ ${modalContent.productData.price} `}</h3>
           </div>
 

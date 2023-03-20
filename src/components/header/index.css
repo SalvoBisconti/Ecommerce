@@ -6,7 +6,7 @@
   align-items: center;
   padding: 15px 20px;
   position: fixed;
-  z-index: 2;
+  z-index: 4;
   background-color: rgb(1, 132, 117);
 }
 
@@ -20,7 +20,8 @@
 .header-list {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: end;
+  align-items: center;
   list-style-type: none;
 }
 .cart-element-header {
@@ -41,4 +42,29 @@
   padding: 3px 7px;
   font-size: 0.8rem;
   text-align: center;
+}
+
+.hamburger-menu {
+  font-size: 1.7rem;
+  margin-left: 30px;
+  cursor: pointer;
+}
+
+.li-hidden {
+  display: none;
+  pointer-events: none;
+}
+
+@media screen and (min-width: 800px) {
+  .header-list {
+    justify-content: space-around;
+  }
+  .li-hidden {
+    display: flex;
+    pointer-events: all;
+  }
+  .hamburger-menu {
+    display: none;
+    pointer-events: none;
+  }
 }

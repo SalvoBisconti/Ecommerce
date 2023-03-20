@@ -3,9 +3,9 @@ import { useState } from "react";
 const Filter = ({ productsData, setCategoryFilter, categoryFilter }) => {
   const categoryArray = productsData.map((element) => element.category);
 
-  const category = categoryArray
-    .filter((category, index) => categoryArray.indexOf(category) === index)
-    .concat("see all");
+  const category = categoryArray.filter(
+    (category, index) => categoryArray.indexOf(category) === index
+  );
 
   return (
     <div className="Filter">

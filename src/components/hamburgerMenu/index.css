@@ -1,0 +1,37 @@
+.HamburgerMenu {
+}
+
+.overlay-hamburger-menu {
+  position: fixed;
+  top: 65px;
+  height: 100vh;
+  width: 100vw;
+  z-index: 4;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.hamburger-menu-content {
+  position: fixed;
+  top: 65px;
+  right: -250px;
+  height: 50vh;
+  width: 50vw;
+  z-index: 5;
+  background-color: whitesmoke;
+  border-radius: 12px;
+  color: rgb(1, 132, 117);
+  transition: all 1s ease;
+}
+
+.hamburger-menu-list {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding: 15px;
+  font-size: 1.5rem;
+  gap: 10px;
+}
+
+.show-hamburger-menu {
+  right: 0px;
+}

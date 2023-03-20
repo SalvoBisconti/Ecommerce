@@ -17,9 +17,7 @@ const ModalCart = ({
         <h2 className="cart-title"> Your cart</h2>
         <div className="items-cart-list">
           {!cartStorageContent.length ? (
-            <p className="empty-cart-text">
-              Your cart is empty... add a new product
-            </p>
+            <p className="empty-cart-text">Your cart is empty</p>
           ) : (
             cartStorageContent.map((item) => (
               <CartItem

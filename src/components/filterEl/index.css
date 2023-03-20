@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   padding: 20px 20px 0px 20px;
+  margin: 30px;
 }
 .filter-area {
   display: flex;
@@ -23,4 +24,10 @@
 
 .isActive {
   background-color: rgb(2, 63, 56);
+}
+
+@media screen and (min-width: 800px) {
+  .filter-area {
+    justify-content: center;
+  }
 }
