@@ -11,8 +11,9 @@ const Filter = ({ productsData, setCategoryFilter, categoryFilter }) => {
     <div className="Filter">
       <h2> Products:</h2>
       <div className="filter-area">
-        {category.map((item) => (
+        {category.map((item, i) => (
           <button
+            key={i}
             className={`filter-element ${
               categoryFilter === item && "isActive"
             } `}

@@ -3,10 +3,6 @@ import "./index.css";
 const FormEl = ({ inputEl, setInputEl }) => {
   const onHandleSubmit = (e) => {
     e.preventDefault();
-    // {
-    //   console.log(inputEl);
-    // }
-    // inputEl ? console.log(`Ecco: ${inputEl}`) : null;
     setInputEl(() => inputEl);
   };
 

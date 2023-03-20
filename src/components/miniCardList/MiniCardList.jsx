@@ -5,8 +5,7 @@ import { useState, useEffect } from "react";
 
 const MiniCardList = (endpoint, inputEl) => {
   const [miniProductsData, setMiniProductsData] = useState([]);
-  // const a = inputEl;
-  // console.log(a);
+
   useEffect(() => {
     GET(
       inputEl ? `/products/category/skincare` : "/products/category/laptops"

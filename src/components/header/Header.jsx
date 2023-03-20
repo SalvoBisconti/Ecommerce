@@ -44,7 +44,6 @@ const Header = ({
           </div>
         </li>
         <li>
-          {" "}
           <HiMenu className="hamburger-menu" onClick={onHandleHamburgerMenu} />
         </li>
       </ul>

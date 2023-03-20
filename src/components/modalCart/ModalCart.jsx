@@ -19,8 +19,9 @@ const ModalCart = ({
           {!cartStorageContent.length ? (
             <p className="empty-cart-text">Your cart is empty</p>
           ) : (
-            cartStorageContent.map((item) => (
+            cartStorageContent.map((item, i) => (
               <CartItem
+                key={i}
                 product={item}
                 setModalCartContent={setModalCartContent}
                 cartStorageContent={cartStorageContent}

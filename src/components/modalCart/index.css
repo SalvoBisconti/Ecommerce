@@ -34,6 +34,9 @@
 }
 .empty-cart-text {
   padding: 20px 0;
+  text-align: center;
+  font-style: italic;
+  color: gray;
 }
 .cart-sum {
   border-top: 1px solid rgba(128, 128, 128, 0.45);
