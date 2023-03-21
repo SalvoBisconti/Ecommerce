@@ -4,11 +4,7 @@ const Footer = () => {
   return (
     <div className="Footer">
       <div className="top-footer">
-        <img
-          src="../../../public/logo.png"
-          alt="logo"
-          className="footer-logo"
-        />
+        <img src="/logo.png" alt="logo" className="footer-logo" />
         <ul className="footer-list">
           <li>About us</li>
           <li>Concacts</li>

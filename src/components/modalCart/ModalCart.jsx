@@ -17,7 +17,14 @@ const ModalCart = ({
         <h2 className="cart-title"> Your cart</h2>
         <div className="items-cart-list">
           {!cartStorageContent.length ? (
-            <p className="empty-cart-text">Your cart is empty</p>
+            <div className="empty-cart">
+              <p className="empty-cart-text">Your cart is empty</p>
+              <a href="">
+                <button className="empty-cart-btn" type="button">
+                  Add a product
+                </button>
+              </a>
+            </div>
           ) : (
             cartStorageContent.map((item, i) => (
               <CartItem
@@ -28,7 +35,9 @@ const ModalCart = ({
               />
             ))
           )}
-          <h4 className="cart-sum">Total: ${cartSum} </h4>
+          {cartStorageContent.length ? (
+            <h4 className="cart-sum"> Total: ${cartSum} </h4>
+          ) : null}
         </div>
       </div>
     </div>

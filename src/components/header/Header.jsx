@@ -18,11 +18,7 @@ const Header = ({
   return (
     <div className={`Header ${scroll && "scrolled-header"}`}>
       <div className="logo-sec">
-        <img
-          src="../../../public/logo.png"
-          alt="logo"
-          className="header-logo"
-        />
+        <img src="/logo.png" alt="logo" className="header-logo" />
       </div>
       <ul className="header-list">
         <li className="li-hidden">About us </li>
