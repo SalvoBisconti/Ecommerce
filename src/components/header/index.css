@@ -7,9 +7,11 @@
   padding: 15px 20px;
   position: fixed;
   z-index: 4;
+  background-color: transparent;
+}
+.scrolled-header {
   background-color: rgb(1, 132, 117);
 }
-
 .logo-sec {
   width: 60%;
 }
@@ -23,6 +25,8 @@
   justify-content: end;
   align-items: center;
   list-style-type: none;
+  font-weight: bold;
+  font-size: 1.3rem;
 }
 .cart-element-header {
   position: relative;

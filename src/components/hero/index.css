@@ -13,9 +13,8 @@
 
 .hero-overlay {
   position: absolute;
-  top: 65px;
   width: 100%;
-  height: calc(100% - 65px);
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.35);
   z-index: 1;
 }

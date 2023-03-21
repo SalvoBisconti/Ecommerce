@@ -7,6 +7,7 @@ const Header = ({
   isCartModal,
   cartStorageContent,
   setIsHamburgerMenu,
+  scroll,
 }) => {
   const onHandleCart = () => {
     setIsCartModal(!isCartModal);
@@ -15,7 +16,7 @@ const Header = ({
     setIsHamburgerMenu((prev) => !prev);
   };
   return (
-    <div className="Header">
+    <div className={`Header ${scroll && "scrolled-header"}`}>
       <div className="logo-sec">
         <img
           src="../../../public/logo.png"

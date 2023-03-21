@@ -41,6 +41,14 @@ function App() {
     JSON.parse(localStorage.getItem("cartStorage")) || [];
 
   const [isPopup, setIsPopup] = useState(false);
+
+  const [scroll, setScroll] = useState(false);
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      setScroll(window.scrollY > 150);
+    });
+  }, []);
+
   return (
     <div className="App">
       <Header
@@ -48,6 +56,7 @@ function App() {
         isCartModal={isCartModal}
         cartStorageContent={cartStorageContent}
         setIsHamburgerMenu={setIsHamburgerMenu}
+        scroll={scroll}
       />
       <Hero setInputEl={setInputEl} inputEl={inputEl} />
       <MiniCardList endpoint={"/products"} inputEl={inputEl} />
