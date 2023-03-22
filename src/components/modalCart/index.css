@@ -1,11 +1,11 @@
 .ModalCart {
   position: fixed;
-  top: 50px;
-  right: -300px;
+  top: -250px;
+  right: 0px;
   width: 50vw;
   background-color: white;
   z-index: 5;
-  transition: all 0.35s ease;
+  transition: all 0.45s ease;
   padding: 10px;
   border-radius: 12px;
   display: flex;
@@ -16,7 +16,7 @@
 }
 
 .modal-cart-show {
-  right: 0;
+  top: 50px;
 }
 .cart-title {
   text-align: center;

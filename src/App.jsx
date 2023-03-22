@@ -81,21 +81,19 @@ function App() {
         />
       )}
 
-      {isCartModal && (
-        <ModalCart
-          isCartModal={isCartModal}
-          cartStorageContent={cartStorageContent}
-          setModalCartContent={setModalCartContent}
-        />
-      )}
+      <ModalCart
+        isCartModal={isCartModal}
+        cartStorageContent={cartStorageContent}
+        setModalCartContent={setModalCartContent}
+      />
+
       {isPopup && <Popup popupText={"Added to cart"} />}
       <Footer />
-      {isHamburgerMenu && (
-        <HamburgerMenu
-          setIsHamburgerMenu={setIsHamburgerMenu}
-          isHamburgerMenu={isHamburgerMenu}
-        />
-      )}
+
+      <HamburgerMenu
+        setIsHamburgerMenu={setIsHamburgerMenu}
+        isHamburgerMenu={isHamburgerMenu}
+      />
     </div>
   );
 }

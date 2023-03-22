@@ -5,13 +5,11 @@ const HamburgerMenu = ({ setIsHamburgerMenu, isHamburgerMenu }) => {
     setIsHamburgerMenu((prev) => !prev);
   };
   return (
-    <div className="HamburgerMenu">
+    <div
+      className={`HamburgerMenu ${isHamburgerMenu && "show-hamburger-menu"}  `}
+    >
       <div className="overlay-hamburger-menu" onClick={onHandleOverlay}></div>
-      <div
-        className={`hamburger-menu-content ${
-          isHamburgerMenu && "show-hamburger-menu"
-        }  `}
-      >
+      <div className="hamburger-menu-content">
         <ul className="hamburger-menu-list">
           <li>About us </li>
           <li>Shop </li>
